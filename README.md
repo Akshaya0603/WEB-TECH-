@@ -1,4 +1,4 @@
-# ShopEasy – MERN Shopping Application (CS3801 Exercise 8 + extra features)
+# ShopEasy – MERN Shopping Application: JWT auth, admin role, validation, rate limiting, HTTPS
 
 ## Run it
 Prerequisites: Node 18+, and a MongoDB Atlas URI in `server/.env` (or MongoDB running locally).
