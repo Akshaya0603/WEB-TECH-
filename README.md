@@ -109,3 +109,21 @@ simple query parser and the type checks – the JWT proves *who* the user is, it
 - Email ID is the identifier, so PUT/PATCH edit username, age and password only.
 - Changing `JWT_SECRET` logs everyone out (old tokens stop verifying).
 - A demoted admin keeps admin rights until their current token expires (the role is read from the token).
+
+## Troubleshooting
+
+| Problem | Possible Cause | Solution |
+|---|---|---|
+| MongoDB connection failed | Incorrect Atlas URI or IP not whitelisted | Verify the MongoDB URI and check Atlas Network Access settings. |
+| 401 Unauthorized | Missing, invalid or expired JWT | Log in again and use the newly generated token. |
+| 403 Forbidden | Insufficient permissions | Check whether the account has the required user/admin role. |
+| 404 Not Found | Invalid API endpoint or resource ID | Verify the endpoint and resource identifier. |
+| 429 Too Many Requests | Rate limit exceeded | Wait for the rate-limit window to reset before retrying. |
+| HTTPS certificate warning | Self-signed localhost certificate | Proceed through Advanced → Proceed to localhost. |
+| Port already in use | Another process is using the required port | Stop the existing process or configure another available port. |
+
+### Before Reporting an Issue
+- Ensure both frontend and backend dependencies are installed.
+- Verify that the environment variables are configured correctly.
+- Check that MongoDB is running and accessible.
+- Check the browser console and backend terminal for error messages.
